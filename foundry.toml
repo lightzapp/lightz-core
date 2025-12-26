@@ -1,0 +1,21 @@
+[profile.default]
+src = "contracts"
+test = "contracts/test"
+script = "contracts/script"
+libs = ["contracts/lib"]
+gas_reports = ["EtherSwap", "ERC20Swap", "Router"]
+
+evm_version = "istanbul"
+
+[profile.release]
+optimizer = true
+optimizer_runs = 10_000_000
+
+[fuzz]
+runs = 8192
+
+[fmt]
+ignore = ["contracts/lib/**/*"]
+
+[lint]
+ignore = ["contracts/lib/**/*"]
